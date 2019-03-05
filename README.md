@@ -2,6 +2,9 @@
 ---
 https://github.com/mitchellh/mapstructure
 
+https://godoc.org/github.com/mitchellh/mapstructure#example-Decode
+
+
 ```go
 type Person struct {
   Name string
@@ -156,6 +159,20 @@ func DecodeHookExec(
   raw DecodeHookFunc,
   from reflect.Type, to reflect.Type,
   data interface{}) (interface{}, error)
+
+type DecoderConfig struct {
+  DecodeHook bool
+  
+  ErrorUnused bool
+  
+  ZeroFields bool
+  
+  Netadata *Metadata
+  
+  Result interface{}
+  
+  TagName string
+}
 ```
 
 ```
